@@ -62,6 +62,7 @@ int main(int argc, char **argv)
   turtlesim::Kill srv1;
   srv1.request.name = "turtle1";
 
+  client1.waitForExistence();
   client1.call(srv1);
 
   turtlesim::Spawn srv2;
@@ -71,6 +72,7 @@ int main(int argc, char **argv)
   srv2.request.theta=0.0;
   srv2.request.name="rt_turtle";
 
+  client2.waitForExistence();
   client2.call(srv2);
 
   std_srvs::Empty srv3;
@@ -79,15 +81,16 @@ int main(int argc, char **argv)
   srv4.request.x=2.0;
   srv4.request.y=1.0;
   srv4.request.theta=0.0;
-
+  client4.waitForExistence();
   client4.call(srv4);
 
   sleep(1);
+  client3.waitForExistence();
   client3.call(srv3);
   sleep(1);
   ros::Subscriber pose_sub = n.subscribe("/rt_turtle/pose", 1000, subscriberCallback);
   chatter_pub = n.advertise<geometry_msgs::Twist>("/rt_turtle/cmd_vel", 1000);
-
+  client5.waitForExistence();
   ros::spin();
 
   return 0;
