@@ -145,7 +145,6 @@ add_executable(exercise2 src/exercise2.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(turtlebot_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(exercise3 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(turtlebot_controller
