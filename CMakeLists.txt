@@ -13,7 +13,6 @@ find_package(catkin REQUIRED COMPONENTS
   turtlesim
   geometry_msgs
   message_generation
-  my_srv
 )
 
 ## System dependencies are found with CMake's conventions
@@ -136,7 +135,6 @@ include_directories(
 add_executable(turtlebot_controller src/turtlebot_controller.cpp)
 add_executable(exercise1 src/exercise1.cpp)
 add_executable(exercise2 src/exercise2.cpp)
-add_executable(exercise3 src/exercise3.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -162,10 +160,6 @@ add_dependencies(exercise3 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED
    ${catkin_LIBRARIES}
  )
  
-  target_link_libraries(exercise3
-   ${catkin_LIBRARIES}
- )
-
 #############
 ## Install ##
 #############
