@@ -132,7 +132,6 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(turtlebot_controller src/turtlebot_controller.cpp)
 add_executable(exercise1 src/exercise1.cpp)
 add_executable(exercise2 src/exercise2.cpp)
 
@@ -144,13 +143,8 @@ add_executable(exercise2 src/exercise2.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(turtlebot_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(turtlebot_controller
-   ${catkin_LIBRARIES}
- )
- 
  target_link_libraries(exercise1
    ${catkin_LIBRARIES}
  )
